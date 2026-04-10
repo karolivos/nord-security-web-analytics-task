@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
     
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        });
+      </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nord Analytics Test Project</title>
@@ -19,10 +30,6 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTD595MB"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-  </script>
-
   <header>
     <h2>Nord Analytics Bonus Project</h2>
     <select id="localeSwitcher">
@@ -31,6 +38,10 @@
       <option value="de-DE">Deutsch</option>
       <option value="lt-LT">Lietuvių</option>
     </select>
+    <button onclick="CookieConsent.showPreferences()" 
+    style="margin-left:10px; padding:6px 12px; cursor:pointer;">
+Cookie Settings
+</button>
   </header>
 
   <main class="container">
@@ -63,4 +74,8 @@
 
   <script src="./script.js"></script>
 </body>
+<footer>
+    <button onclick="CookieConsent.showPreferences()">Cookie Settings</button>
+
+</footer>
 </html>

@@ -7,7 +7,6 @@ const plans = [
   ];
   
   let selectedPlan = null;
-  let consentGranted = true;
   
   const pricingGrid = document.getElementById("pricingGrid");
   const pricingPage = document.getElementById("pricingPage");
@@ -53,7 +52,7 @@ const plans = [
           locale: locale,
         };
   
-        if (consentGranted) {
+        
           dataLayer.push({
             event: "add-to-cart",
             plan_name: selectedPlan.name,
@@ -62,7 +61,7 @@ const plans = [
             billing_period: selectedPlan.billingPeriod,
             locale: selectedPlan.locale,
           });
-        }
+        
   
         pricingPage.classList.add("hidden");
         checkoutPage.classList.remove("hidden");
@@ -79,7 +78,7 @@ const plans = [
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
   
-    if (consentGranted) {
+    
       dataLayer.push({
         event: "conversion",
         plan_name: selectedPlan.name,
@@ -90,7 +89,7 @@ const plans = [
         user_email: document.getElementById("email").value,
         locale: selectedPlan.locale,
       });
-    }
+    
   
     checkoutPage.classList.add("hidden");
     successPage.classList.remove("hidden");
